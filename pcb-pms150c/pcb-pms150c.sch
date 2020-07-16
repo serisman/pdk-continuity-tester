@@ -1,0 +1,201 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Padauk:PMS150C-U06 U1
+U 1 1 5F107C2F
+P 5500 3500
+F 0 "U1" H 5500 3250 50  0000 C CNN
+F 1 "PMS150C-U06" H 5500 3750 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5500 3500 50  0001 C CNN
+F 3 "" H 5500 3500 50  0001 C CNN
+	1    5500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5F1095DA
+P 6000 3600
+F 0 "R3" V 6000 3550 50  0000 L CNN
+F 1 "4k7" V 6100 3600 50  0000 C CNN
+F 2 "modules:R_0805" V 5930 3600 50  0001 C CNN
+F 3 "~" H 6000 3600 50  0001 C CNN
+	1    6000 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5F10ACDC
+P 6350 3600
+F 0 "D1" H 6400 3500 50  0000 R CNN
+F 1 "LED" H 6350 3400 50  0000 C CNN
+F 2 "modules:LED_0805" H 6350 3600 50  0001 C CNN
+F 3 "~" H 6350 3600 50  0001 C CNN
+	1    6350 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5F10DC7D
+P 6000 3400
+F 0 "R2" V 6000 3450 50  0000 R CNN
+F 1 "120" V 6100 3400 50  0000 C CNN
+F 2 "modules:R_0805" V 5930 3400 50  0001 C CNN
+F 3 "~" H 6000 3400 50  0001 C CNN
+	1    6000 3400
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:Buzzer BZ1
+U 1 1 5F10DF9C
+P 6350 3300
+F 0 "BZ1" V 6400 3300 50  0000 C CNN
+F 1 "Buzzer" V 6550 3300 50  0000 C CNN
+F 2 "Buzzer_Beeper:Buzzer_12x9.5RM7.6" V 6325 3400 50  0001 C CNN
+F 3 "~" V 6325 3400 50  0001 C CNN
+	1    6350 3300
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F117A45
+P 5000 3400
+F 0 "R1" V 5000 3450 50  0000 R CNN
+F 1 "47" V 5100 3400 50  0000 C CNN
+F 2 "modules:R_0805" V 4930 3400 50  0001 C CNN
+F 3 "~" H 5000 3400 50  0001 C CNN
+	1    5000 3400
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4750 3600 5150 3600
+Wire Wire Line
+	6550 3400 6550 3500
+Wire Wire Line
+	6550 3600 6550 3500
+Connection ~ 6550 3500
+Wire Wire Line
+	5850 3500 6550 3500
+Wire Wire Line
+	6450 3400 6550 3400
+Wire Wire Line
+	6550 3600 6500 3600
+Wire Wire Line
+	6150 3400 6250 3400
+Wire Wire Line
+	6150 3600 6200 3600
+$Comp
+L Connector:TestPoint_Probe TP2
+U 1 1 5F1217BE
+P 4750 3600
+F 0 "TP2" H 4900 3800 50  0000 R CNN
+F 1 "Probe_PA6" H 5300 3700 50  0000 R CNN
+F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 4950 3600 50  0001 C CNN
+F 3 "~" H 4950 3600 50  0001 C CNN
+	1    4750 3600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP1
+U 1 1 5F1221EF
+P 4750 3400
+F 0 "TP1" V 4950 3550 50  0000 R CNN
+F 1 "Probe_GND" V 4850 3950 50  0000 R CNN
+F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 4950 3400 50  0001 C CNN
+F 3 "~" H 4950 3400 50  0001 C CNN
+	1    4750 3400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4850 3400 4800 3400
+Wire Wire Line
+	4750 3500 4800 3500
+Wire Wire Line
+	4800 3400 4800 3500
+Connection ~ 4800 3400
+Wire Wire Line
+	4800 3400 4750 3400
+Connection ~ 4800 3500
+Wire Wire Line
+	4800 3500 5150 3500
+Wire Wire Line
+	6550 3500 6600 3500
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 5F12CF4A
+P 5850 4000
+F 0 "J2" H 5850 4100 50  0000 C CNN
+F 1 "BAT+" H 6100 4000 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 5850 4000 50  0001 C CNN
+F 3 "~" H 5850 4000 50  0001 C CNN
+	1    5850 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J1
+U 1 1 5F12D9DB
+P 5150 4000
+F 0 "J1" H 5100 3900 50  0000 L CNN
+F 1 "BAT-" H 5250 4000 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 5150 4000 50  0001 C CNN
+F 3 "~" H 5150 4000 50  0001 C CNN
+	1    5150 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5F1300AC
+P 4950 4000
+F 0 "#PWR0101" H 4950 3750 50  0001 C CNN
+F 1 "GND" V 4955 3872 50  0000 R CNN
+F 2 "" H 4950 4000 50  0001 C CNN
+F 3 "" H 4950 4000 50  0001 C CNN
+	1    4950 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5F1305F4
+P 4750 3500
+F 0 "#PWR0102" H 4750 3250 50  0001 C CNN
+F 1 "GND" V 4755 3372 50  0000 R CNN
+F 2 "" H 4750 3500 50  0001 C CNN
+F 3 "" H 4750 3500 50  0001 C CNN
+	1    4750 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VDD #PWR0103
+U 1 1 5F130A04
+P 6050 4000
+F 0 "#PWR0103" H 6050 3850 50  0001 C CNN
+F 1 "VDD" V 6067 4128 50  0000 L CNN
+F 2 "" H 6050 4000 50  0001 C CNN
+F 3 "" H 6050 4000 50  0001 C CNN
+	1    6050 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:VDD #PWR0104
+U 1 1 5F1310CA
+P 6600 3500
+F 0 "#PWR0104" H 6600 3350 50  0001 C CNN
+F 1 "VDD" V 6617 3628 50  0000 L CNN
+F 2 "" H 6600 3500 50  0001 C CNN
+F 3 "" H 6600 3500 50  0001 C CNN
+	1    6600 3500
+	0    1    1    0   
+$EndComp
+$EndSCHEMATC
