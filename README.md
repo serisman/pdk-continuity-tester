@@ -11,6 +11,10 @@ This is a port of, and based on an original project for the ATtiny85(V) by David
 
 ### Hardware Circuit
 
+##### Schematic for 8-pin PFS154, PFS173, PMS152, PMS154C
+![Schematic for PFS154-S08](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Schematic-S08.png?raw=true)
+
+##### Schematic for 6-pin PMS150C/PMS15A
 ![Schematic for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/img/PMS150C-U06/Schematic.png?raw=true)
 
 **Probe/Reference**:

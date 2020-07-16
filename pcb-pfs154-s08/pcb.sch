@@ -1,0 +1,204 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Padauk:PFS154-S08 U1
+U 1 1 5F107C2F
+P 5500 3500
+F 0 "U1" H 5500 3200 50  0000 C CNN
+F 1 "PFS154-S08" H 5500 3800 50  0000 C CNN
+F 2 "" H 5500 3500 50  0001 C CNN
+F 3 "" H 5500 3500 50  0001 C CNN
+	1    5500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5F1095DA
+P 5000 3550
+F 0 "R3" V 5000 3500 50  0000 L CNN
+F 1 "4k7" V 4900 3550 50  0000 C CNN
+F 2 "modules:R_0805" V 4930 3550 50  0001 C CNN
+F 3 "~" H 5000 3550 50  0001 C CNN
+	1    5000 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5F10ACDC
+P 4700 3550
+F 0 "D1" H 4850 3500 50  0000 R CNN
+F 1 "LED" H 4700 3450 50  0000 C CNN
+F 2 "modules:LED_0805" H 4700 3550 50  0001 C CNN
+F 3 "~" H 4700 3550 50  0001 C CNN
+	1    4700 3550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5F10DC7D
+P 5000 3650
+F 0 "R2" V 5000 3700 50  0000 R CNN
+F 1 "120" V 4900 3650 50  0000 C CNN
+F 2 "modules:R_0805" V 4930 3650 50  0001 C CNN
+F 3 "~" H 5000 3650 50  0001 C CNN
+	1    5000 3650
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:Buzzer BZ1
+U 1 1 5F10DF9C
+P 4700 3750
+F 0 "BZ1" V 4750 3750 50  0000 C CNN
+F 1 "Buzzer" V 4900 3750 50  0000 C CNN
+F 2 "Buzzer_Beeper:Buzzer_12x9.5RM7.6" V 4675 3850 50  0001 C CNN
+F 3 "~" V 4675 3850 50  0001 C CNN
+	1    4700 3750
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F117A45
+P 6000 3550
+F 0 "R1" V 6000 3600 50  0000 R CNN
+F 1 "47" V 6100 3550 50  0000 C CNN
+F 2 "modules:R_0805" V 5930 3550 50  0001 C CNN
+F 3 "~" H 6000 3550 50  0001 C CNN
+	1    6000 3550
+	0    1    -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP2
+U 1 1 5F1217BE
+P 6250 3650
+F 0 "TP2" V 6400 3700 50  0000 R CNN
+F 1 "Probe_PA6" V 6350 3800 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 6450 3650 50  0001 C CNN
+F 3 "~" H 6450 3650 50  0001 C CNN
+	1    6250 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP1
+U 1 1 5F1221EF
+P 6250 3350
+F 0 "TP1" H 6300 3500 50  0000 R CNN
+F 1 "Probe_GND" H 6400 3450 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm" H 6450 3350 50  0001 C CNN
+F 3 "~" H 6450 3350 50  0001 C CNN
+	1    6250 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J1
+U 1 1 5F12CF4A
+P 5800 4150
+F 0 "J1" H 5800 4050 50  0000 C CNN
+F 1 "BAT-" H 6050 4150 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 5800 4150 50  0001 C CNN
+F 3 "~" H 5800 4150 50  0001 C CNN
+	1    5800 4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 5F12D9DB
+P 5100 4150
+F 0 "J2" H 5050 4250 50  0000 L CNN
+F 1 "BAT+" H 5200 4150 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 5100 4150 50  0001 C CNN
+F 3 "~" H 5100 4150 50  0001 C CNN
+	1    5100 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5F1300AC
+P 6000 4150
+F 0 "#PWR0101" H 6000 3900 50  0001 C CNN
+F 1 "GND" V 6005 4022 50  0000 R CNN
+F 2 "" H 6000 4150 50  0001 C CNN
+F 3 "" H 6000 4150 50  0001 C CNN
+	1    6000 4150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5F1305F4
+P 6250 3500
+F 0 "#PWR0102" H 6250 3250 50  0001 C CNN
+F 1 "GND" V 6255 3372 50  0000 R CNN
+F 2 "" H 6250 3500 50  0001 C CNN
+F 3 "" H 6250 3500 50  0001 C CNN
+	1    6250 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:VDD #PWR0103
+U 1 1 5F130A04
+P 4900 4150
+F 0 "#PWR0103" H 4900 4000 50  0001 C CNN
+F 1 "VDD" V 4917 4278 50  0000 L CNN
+F 2 "" H 4900 4150 50  0001 C CNN
+F 3 "" H 4900 4150 50  0001 C CNN
+	1    4900 4150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:VDD #PWR0104
+U 1 1 5F1310CA
+P 4450 3500
+F 0 "#PWR0104" H 4450 3350 50  0001 C CNN
+F 1 "VDD" V 4467 3628 50  0000 L CNN
+F 2 "" H 4450 3500 50  0001 C CNN
+F 3 "" H 4450 3500 50  0001 C CNN
+	1    4450 3500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5850 3350 6150 3350
+Wire Wire Line
+	6150 3550 6150 3500
+Wire Wire Line
+	5850 3650 6250 3650
+Wire Wire Line
+	6250 3350 6150 3350
+Connection ~ 6150 3350
+Wire Wire Line
+	6250 3500 6150 3500
+Connection ~ 6150 3500
+Wire Wire Line
+	6150 3500 6150 3350
+NoConn ~ 5850 3450
+NoConn ~ 5150 3450
+Wire Wire Line
+	4500 3650 4500 3550
+Wire Wire Line
+	4500 3650 4600 3650
+Wire Wire Line
+	4450 3500 4500 3500
+Connection ~ 4500 3500
+Wire Wire Line
+	4500 3500 4500 3350
+Wire Wire Line
+	4500 3550 4550 3550
+Connection ~ 4500 3550
+Wire Wire Line
+	4500 3550 4500 3500
+Wire Wire Line
+	4800 3650 4850 3650
+Wire Wire Line
+	5150 3350 4500 3350
+$EndSCHEMATC
