@@ -11,6 +11,8 @@ This is a port of, and based on an original project for the ATtiny85(V) by David
 
 ### Hardware Circuit
 
+![Schematic for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Schematic-PMS150C-U06.png?raw=true)
+
 **Probe/Reference**:
 
 One lead of the Probe is connected to one of the Comparator (-) pins, and the other lead is connected to GND. 
