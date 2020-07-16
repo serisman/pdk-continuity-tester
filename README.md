@@ -94,7 +94,7 @@ and less common devices may require additional device specific include files (pd
 
 ### PCB
 
-A PCB design for the 6-pin PMS150C-U06 is available in the [pcb-pms150c](pcb-pms150c/) folder (created with KiCad) and has been [shared on OSHPARK](https://oshpark.com/shared_projects/XcWQiX7z).
+A PCB design for the 6-pin PMS150C is available in the [pcb-pms150c-u06](pcb-pms150c-u06/) folder (created with KiCad) and has been [shared on OSHPARK](https://oshpark.com/shared_projects/XcWQiX7z).
 This design is meant to be attached to the bottom of a ~12mm Piezo Buzzer, where the SMD parts are first soldered to the board, and are underneath the buzzer.
 There are through-holes for the two probe connections, and pads on the back for the battery connections.
 2x LR44 battery cells in series would pair nicely with this PCB, as they are a good voltage match, and are approximately the same diameter (meaning the whole thing can be heat shrunk together for a miniature continuity tester).
