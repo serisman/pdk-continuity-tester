@@ -16,6 +16,7 @@ This is a port of, and based on an original project for the ATtiny85(V) by David
 > ![Schematic for PFS154-S08](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Schematic-S08.png?raw=true)
 
 ##### Schematic for 6-pin PMS150C/PMS15A
+A PCB designed for the 6-pin PMS150C/PMS15A is available in the [pcb-pms150c-u06](pcb-pms150c-u06/) folder.
 > ![Schematic for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/img/PMS150C-U06/Schematic.png?raw=true)
 
 **Probe/Reference**:
@@ -61,15 +62,3 @@ This project is currently intended to be run (without modifications) on the PFS1
 but it should be able to be modified to run on just about every currently known Padauk microcontroller that is supported by SDCC and the Easy PDK Programmer.
 Some microcontrollers will require additional definitions in the [firmware/hal.h](firmware/hal.h) file,
 and less common devices may require additional device specific include files (firmware/pdk/device/*.h) to be supplied.
-
-
-### PCB
-
-A PCB design for the 6-pin PMS150C is available in the [pcb-pms150c-u06](pcb-pms150c-u06/) folder (created with KiCad) and has been [shared on OSHPARK](https://oshpark.com/shared_projects/XcWQiX7z).
-This design is meant to be attached to the bottom of a ~12mm Piezo Buzzer, where the SMD parts are first soldered to the board, and are underneath the buzzer.
-There are through-holes for the two probe connections, and pads on the back for the battery connections.
-2x LR44 battery cells in series would pair nicely with this PCB, as they are a good voltage match, and are approximately the same diameter (meaning the whole thing can be heat shrunk together for a miniature continuity tester).
-
-![3D Render for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/img/PMS150C-U06/3D%20Profile%20-%20Top.png?raw=true)
-![PCB Top for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/img/PMS150C-U06/PCB%20-%20Top.png?raw=true)
-![PCB Bottom for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/img/PMS150C-U06/PCB%20-%20Bottom.png?raw=true)
