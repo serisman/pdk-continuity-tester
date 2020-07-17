@@ -17,7 +17,7 @@
 #endif
 
 // Define which pins to use
-#if defined(PMW150C) || defined(PMS15A)
+#if defined(PMS150C) || defined(PMS15A)
   #define REFERENCE_BIT     4     // Reference is on PA4 (Port A, Bit 4), which is also Comp+
   #define PROBE_BIT         6     // Probe is on PA6 (Port A, Bit 6), which is also Comp-
   #define BUZZER_BIT        3     // Buzzer is placed on the PA3 pin (Port A, Bit 3), which is also TM2PWM
