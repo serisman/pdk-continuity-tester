@@ -26,6 +26,7 @@ uint16_t idle_counter;
 void main() {
 
   // Disable wake-up on un-used pins to save power
+  PADIER = 0x00;
 #if defined(PBDIER)
   PBDIER = 0x00;
 #endif
@@ -36,7 +37,6 @@ void main() {
   // Initialize Buzzer, LED, Probe, and Reference Pins
   PAC = ((1<<LED_BIT) | (1<<BUZZER_BIT));         // Set Buzzer and LED Pins as output
   PAPH = ((1<<REFERENCE_BIT) | (1<<PROBE_BIT));   // Enable pull-ups on Probe and Reference Pins
-  PADIER = (1<<PROBE_BIT);                        // Enable wake-up on Probe Pin
   ledOn();
   buzzerInit();
 
@@ -58,12 +58,14 @@ void main() {
         ledOff();
         GPCC &= ~(GPCC_COMP_ENABLE);          // Disable Comparator to save power
         PAPH &= ~(1<<REFERENCE_BIT);          // Turn off pull-up on Reference Pin to save power
+        PADIER = (1<<PROBE_BIT);              // Enable wake-up on Probe Pin
         MISC = (MISC_FAST_WAKEUP_ENABLE | MISC_LVR_DISABLE); // Disable LVR to save power
 
         __stopsys();                          // Go to sleep
 
         // Carry on here when we wake up
         MISC = 0x00;                          // Re-enable LVR
+        PADIER = 0x00;
         PAPH |= (1<<REFERENCE_BIT);           // Re-enable pull-up on Reference Pin
         GPCC |= (GPCC_COMP_ENABLE);           // Re-enable Comparator
         ledOn();
