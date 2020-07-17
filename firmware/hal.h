@@ -36,34 +36,31 @@
 // Buzzer helpers to initialize PWM and turn Buzzer on/off
 #if defined(PWMG2CUBL)            // Full 11-bit PWM:   PFS154,PMS154C
   inline void buzzerInit() {
-    PWMG2DTL = 0x00;              // Clear the Buzzer PWM duty value
-    PWMG2DTH = 0x00;
-    PWMG2CUBL = 0x00;             // Setup PWM upper bound
-    PWMG2CUBH = 0xFF;
-    PWMG2S = (uint8_t)(PWMG2S_SCALE_DIV8);
-    PWMG2C = (uint8_t)(PWMG2C_ENABLE | PWMG2C_INVERT_OUT | PWMG2C_OUT_PA5 | PWMG2C_CLK_IHRC);
+    PWMG2CUBL = 0xC0;             // Set the PWM upper bound (255+1)
+    PWMG2CUBH = 0x3F;
+    PWMG2DTL = 0xE0;              // Set the PWM duty value (127 + 0.5 + 0.5) = 50%
+    PWMG2DTH = 0x1F;
+    PWMG2S = (uint8_t)(PWMG2S_SCALE_DIV32); // Set the PWM frequency to ~1.953 kHz
   }
-  #define buzzerOn()          PWMG2DTH = 0x7F
-  #define buzzerOff()         PWMG2DTH = 0x00
+  #define buzzerOn()          PWMG2C = (uint8_t)(PWMG2C_ENABLE | PWMG2C_INVERT_OUT | PWMG2C_OUT_PA5 | PWMG2C_CLK_IHRC)
+  #define buzzerOff()         PWMG2C = 0x00; PA |= (1<<BUZZER_BIT)
 #elif defined(PWMGCUBL)           // Basic 11-bit PWM:  PFS173,PMS152
   inline void buzzerInit() {
-    PWMG2DTL = 0x00;              // Clear the Buzzer PWM duty value
-    PWMG2DTH = 0x00;
-    PWMGCUBL = 0x00;              // Setup PWM upper bound
-    PWMGCUBH = 0xFF;
-    PWMGCLK = (uint8_t)(PWMGCLK_PWMG_ENABLE | PWMGCLK_CLK_IHRC | PWMGCLK_PRESCALE_DIV8); // Divide clock by 8
-    PWMG2C = (uint8_t)(PWMG2C_INVERT_OUT | PWMG2C_OUT_PWMG2 | PWMG2C_OUT_PA5);
+    PWMGCUBL = 0xC0;              // Set the PWM upper bound (255+1)
+    PWMGCUBH = 0x3F;
+    PWMG2DTL = 0xE0;              // Set the PWM duty value (127 + 0.5 + 0.5) = 50%
+    PWMG2DTH = 0x1F;
+    PWMGCLK = (uint8_t)(PWMGCLK_PWMG_ENABLE | PWMGCLK_CLK_IHRC | PWMGCLK_PRESCALE_DIV32); // Set the PWM frequency to ~1.953 kHz
   }
-  #define buzzerOn()          PWMG2DTH = 0x7F
-  #define buzzerOff()         PWMG2DTH = 0x00
+  #define buzzerOn()          PWMG2C = (uint8_t)(PWMG2C_INVERT_OUT | PWMG2C_OUT_PWMG2 | PWMG2C_OUT_PA5)
+  #define buzzerOff()         PWMG2C = 0x00; PA |= (1<<BUZZER_BIT)
 #else                             // 8-bit PWM:         PFS172,PMS150C,PMS15A,PMS171B
   inline void buzzerInit() {
-    TM2B = 0x00;                  // Clear the Buzzer PWM duty value
-    TM2S = (uint8_t)(TM2S_SCALE_DIV8);
-    TM2C = (uint8_t)(TM2C_INVERT_OUT | TM2C_MODE_PWM | TM2C_OUT_PA3 | TM2C_CLK_IHRC);
+    TM2B = 0x7F;                  // Set the PWM duty value (127 + 1) = 50%
+    TM2S = (uint8_t)(TM2S_SCALE_DIV32); // Set the PWM frequency to ~1.953 kHz
   }
-  #define buzzerOn()          TM2B = 0x7F
-  #define buzzerOff()         TM2B = 0x00
+  #define buzzerOn()          TM2C = (uint8_t)(TM2C_INVERT_OUT | TM2C_MODE_PWM | TM2C_OUT_PA3 | TM2C_CLK_IHRC)
+  #define buzzerOff()         TM2C = 0x00; PA |= (1<<BUZZER_BIT)
 #endif
 
 // LED is active low (current sink), so define helpers for better readability
