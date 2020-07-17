@@ -21,7 +21,7 @@
   #define REFERENCE_BIT     4     // Reference is on PA4 (Port A, Bit 4), which is also Comp+
   #define PROBE_BIT         6     // Probe is on PA6 (Port A, Bit 6), which is also Comp-
   #define BUZZER_BIT        3     // Buzzer is placed on the PA3 pin (Port A, Bit 3), which is also TM2PWM
-  #define LED_BIT           5     // LED is placed on the PA6 pin (Port A, Bit 6)
+  #define LED_BIT           5     // LED is placed on the PA5 pin (Port A, Bit 5)
 
   #define COMP_MINUS        GPCC_COMP_MINUS_PA6
 #else
