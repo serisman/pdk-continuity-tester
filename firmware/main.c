@@ -36,12 +36,12 @@ void main() {
 
   // Initialize Buzzer, LED, Probe, and Reference Pins
   PAC = ((1<<LED_BIT) | (1<<BUZZER_BIT));         // Set Buzzer and LED Pins as output
-  PAPH = ((1<<REFERENCE_BIT) | (1<<PROBE_BIT));   // Enable pull-ups on Probe and Reference Pins
   ledOn();
   buzzerInit();
 
   // Setup/enable the Comparator for continuity testing (i.e. Reference(+) > Probe(-))
-  GPCC = (uint8_t)(GPCC_COMP_ENABLE | COMP_MINUS | GPCC_COMP_PLUS_PA4);
+  GPCC = (uint8_t)(GPCC_COMP_ENABLE | COMP_MINUS | GPCC_COMP_PLUS_VINT_R);
+  GPCS = (uint8_t)(GPCS_COMP_RANGE4);
 
   // Main processing loop
   while (1) {
@@ -57,7 +57,6 @@ void main() {
       if (idle_counter == 0) {
         ledOff();
         GPCC &= ~(GPCC_COMP_ENABLE);          // Disable Comparator to save power
-        PAPH &= ~(1<<REFERENCE_BIT);          // Turn off pull-up on Reference Pin to save power
         PADIER = (1<<PROBE_BIT);              // Enable wake-up on Probe Pin
         MISC = (MISC_FAST_WAKEUP_ENABLE | MISC_LVR_DISABLE); // Disable LVR to save power
 
@@ -66,7 +65,6 @@ void main() {
         // Carry on here when we wake up
         MISC = 0x00;                          // Re-enable LVR
         PADIER = 0x00;
-        PAPH |= (1<<REFERENCE_BIT);           // Re-enable pull-up on Reference Pin
         GPCC |= (GPCC_COMP_ENABLE);           // Re-enable Comparator
         ledOn();
       }
