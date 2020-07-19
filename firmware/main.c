@@ -46,7 +46,7 @@ void main() {
   // Main processing loop
   while (1) {
 
-    if ((GPCC & GPCC_COMP_RESULT_POSITIV) == GPCC_COMP_RESULT_POSITIV) {
+    if ((GPCC & GPCC_COMP_RESULT_POSITIVE) == GPCC_COMP_RESULT_POSITIVE) {
       // Continuity found, turn Buzzer on, reset idle counter
       buzzerOn();
       idle_counter = 0xFFFF;
