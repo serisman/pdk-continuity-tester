@@ -56,7 +56,7 @@
   #define buzzerOff()         PWMG2C = 0x00; PA |= (1<<BUZZER_BIT)
 #else                             // 8-bit PWM:         PFS172,PMS150C,PMS15A,PMS171B
   inline void buzzerInit() {
-    TM2B = 0x7F;                  // Set the PWM duty value (127 + 1) = 50%
+    TM2B = 0x7F;                  // Set the PWM duty value (127+1) = 50%
     TM2S = (uint8_t)(TM2S_SCALE_DIV32); // Set the PWM frequency to ~1.953 kHz
   }
   #define buzzerOn()          TM2C = (uint8_t)(TM2C_INVERT_OUT | TM2C_MODE_PWM | TM2C_OUT_PA3 | TM2C_CLK_IHRC)
