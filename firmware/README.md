@@ -1,4 +1,4 @@
-# firmware (pdk-continuity-tester)
+# firmware ([pdk-continuity-tester](https://github.com/serisman/pdk-continuity-tester/))
 
 ### Toolchain:
 - The open-source [Small Device C Compiler (SDCC)](http://sdcc.sourceforge.net/)

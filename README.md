@@ -9,6 +9,10 @@ This is a port of, and based on an original project for the ATtiny85(V) by David
 - http://www.technoblogy.com/show?1YON
 - https://github.com/technoblogy/continuity-tester
 
+### Links
+- [Firmware](firmware/)
+- [PCB - PMS150C-U06](pcb-pms150c-u06/)
+
 ### Hardware Circuit
 
 ##### Schematic for 8-pin PFS154, PFS173, PMS152, PMS154C

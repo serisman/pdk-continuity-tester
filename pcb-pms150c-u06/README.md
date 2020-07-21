@@ -1,4 +1,4 @@
-# pcb-pms150c-u06 (pdk-continuity-tester)
+# pcb-pms150c-u06 ([pdk-continuity-tester](https://github.com/serisman/pdk-continuity-tester/))
 
 ### Schematic for 6-pin PMS150C/PMS15A
 > ![Schematic for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/img/PMS150C-U06/Schematic.png?raw=true)
