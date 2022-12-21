@@ -17,11 +17,11 @@ This is a port of, and based on an original project for the ATtiny85(V) by David
 
 ##### Schematic for 8-pin PFS154, PFS173, PMS152, PMS154C
 (Also works for 10-pin, 14-pin, and 16-pin)
-> ![Schematic for PFS154-S08](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Schematic-S08.png?raw=true)
+> ![Schematic for PFS154-S08](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-pfs154-s08/output/Schematic.png?raw=true)
 
 ##### Schematic for 6-pin PMS150C/PMS15A
 A PCB designed for the 6-pin PMS150C/PMS15A is available in the [pcb-pms150c-u06](pcb-pms150c-u06/) folder.
-> ![Schematic for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/img/PMS150C-U06/Schematic.png?raw=true)
+> ![Schematic for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-pms150c-u06/output/Schematic.png?raw=true)
 
 **Probe/Reference**:
 
