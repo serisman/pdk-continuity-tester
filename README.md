@@ -13,15 +13,15 @@ This is a port of, and based on an original project for the ATtiny85(V) by David
 - [Firmware](firmware/)
 - [PCB](pcb-s08/)
 
-> ![Finished](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Finished.jpg?raw=true)
-> ![Top Side](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Top-Side.jpg?raw=true)
-> ![Bottom Side](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Bottom-with-Battery.jpg?raw=true)
+![Finished](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Finished.jpg?raw=true)
+![Top Side](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Top-Side.jpg?raw=true)
+![Bottom Side](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Bottom-with-Battery.jpg?raw=true)
 
 ### Hardware Circuit
 
 ##### Schematic
 (for 8-pin PFS154, PFS173, PMS150C/PMS15A, PMS152, PMS154C, PMS171B)
-> ![Schematic](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-s08/output/Schematic.png?raw=true)
+![Schematic](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-s08/output/Schematic.png?raw=true)
 
 **Probe/Reference**:
 
