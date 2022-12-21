@@ -15,3 +15,6 @@ Attach a CR1225 (or CR1220, CR1025, CR927, etc...) to the bottom after soldering
 
 ![3D Top](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-s08/output/3D%20Top.png?raw=true)
 ![3D Bottom](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-s08/output/3D%20Bottom.png?raw=true)
+
+![PCB Top](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-s08/output/OSHPARK%20Top.png?raw=true)
+![PCB Bottom](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-s08/output/OSHPARK%20Bottom.png?raw=true)
