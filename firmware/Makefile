@@ -1,5 +1,7 @@
 
+#DEVICE = PMS150C
 DEVICE = PFS154
+#DEVICE = PFS173
 TARGET_VDD_MV = 3000
 
 # ---------------------------------------------------------------------
@@ -17,6 +19,8 @@ else ifeq ($(DEVICE), PMS15A)
 else ifeq ($(DEVICE), PMS152)
 	ARCH = pdk14
 else ifeq ($(DEVICE), PMS154C)
+	ARCH = pdk14
+else ifeq ($(DEVICE), PMS171B)
 	ARCH = pdk14
 endif
 
@@ -59,6 +63,8 @@ size: build
 
 program: size
 	$(EASYPDKPROG) -n $(DEVICE) write $(OUTPUT).ihx
+probe:
+	$(EASYPDKPROG) probe
 
 clean:
 	rm -r -f $(BUILD_DIR) $(OUTPUT_DIR)

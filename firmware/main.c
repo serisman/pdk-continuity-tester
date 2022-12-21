@@ -20,7 +20,7 @@
 #include <easy-pdk/calibrate.h>
 #include "hal.h"
 
-uint16_t idle_counter;
+uint16_t idle_counter = 0x0FFF;
 
 // Main program
 void main() {
@@ -35,10 +35,11 @@ void main() {
 #endif
 
   // Initialize Buzzer, LED, Probe, and Reference Pins
-  PAC = ((1<<LED_BIT) | (1<<BUZZER_BIT));         // Set Buzzer and LED Pins as output
-  PAPH = ((1<<REFERENCE_BIT) | (1<<PROBE_BIT));   // Enable pull-ups on Probe and Reference Pins
+  PAC = (uint8_t)((1<<LED_BIT)|(1<<BUZZER_BIT)|(1<<PULL_REF_HI_BIT));  // Set Buzzer and LED Pins as output
+  PAPH = 0x00;
+  PA |= (1<<PULL_REF_HI_BIT);           // Enable pull-up on Reference Pin
   ledOn();
-  buzzerInit();
+  buzzerInitPWM();
 
   // Setup/enable the Comparator for continuity testing (i.e. Reference(+) > Probe(-))
   GPCC = (uint8_t)(GPCC_COMP_ENABLE | COMP_MINUS | GPCC_COMP_PLUS_PA4);
@@ -49,7 +50,7 @@ void main() {
     if ((GPCC & GPCC_COMP_RESULT_POSITIVE) == GPCC_COMP_RESULT_POSITIVE) {
       // Continuity found, turn Buzzer on, reset idle counter
       buzzerOn();
-      idle_counter = 0xFFFF;
+      idle_counter = 0x0FFF;
     } else {
       // No continuity, turn Buzzer off, go to sleep after a short delay
       buzzerOff();
@@ -57,7 +58,7 @@ void main() {
       if (idle_counter == 0) {
         ledOff();
         GPCC &= ~(GPCC_COMP_ENABLE);          // Disable Comparator to save power
-        PAPH &= ~(1<<REFERENCE_BIT);          // Turn off pull-up on Reference Pin to save power
+        PA &= ~(1<<PULL_REF_HI_BIT);           // Turn off pull-up on Reference Pin to save power
         PADIER = (1<<PROBE_BIT);              // Enable wake-up on Probe Pin
         MISC = (MISC_FAST_WAKEUP_ENABLE | MISC_LVR_DISABLE); // Disable LVR to save power
 
@@ -66,7 +67,7 @@ void main() {
         // Carry on here when we wake up
         MISC = 0x00;                          // Re-enable LVR
         PADIER = 0x00;
-        PAPH |= (1<<REFERENCE_BIT);           // Re-enable pull-up on Reference Pin
+        PA |= (1<<PULL_REF_HI_BIT);           // Re-enable pull-up on Reference Pin
         GPCC |= (GPCC_COMP_ENABLE);           // Re-enable Comparator
         ledOn();
       }

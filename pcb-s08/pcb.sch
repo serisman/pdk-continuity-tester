@@ -1,0 +1,272 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Padauk:PMS150C-S08 U1
+U 1 1 5F107C2F
+P 5500 3500
+F 0 "U1" H 5700 3800 50  0000 C CNN
+F 1 "PDK" H 5325 3800 50  0000 C CNN
+F 2 "Package_SO:SOP-8_3.9x4.9mm_P1.27mm" H 5500 3500 50  0001 C CNN
+F 3 "" H 5500 3500 50  0001 C CNN
+	1    5500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5F1095DA
+P 5000 3450
+F 0 "R3" V 4900 3400 50  0000 L CNN
+F 1 "4k7" V 5000 3450 50  0000 C CNN
+F 2 "modules:R_0603" V 4930 3450 50  0001 C CNN
+F 3 "~" H 5000 3450 50  0001 C CNN
+	1    5000 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5F10ACDC
+P 4700 3450
+F 0 "D1" H 4750 3350 50  0000 R CNN
+F 1 "LED" H 4700 3550 50  0000 C CNN
+F 2 "modules:LED_0805" H 4700 3450 50  0001 C CNN
+F 3 "~" H 4700 3450 50  0001 C CNN
+	1    4700 3450
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5F10DC7D
+P 5000 3650
+F 0 "R2" V 4900 3700 50  0000 R CNN
+F 1 "120" V 5000 3650 50  0000 C CNN
+F 2 "modules:R_0805" V 4930 3650 50  0001 C CNN
+F 3 "~" H 5000 3650 50  0001 C CNN
+	1    5000 3650
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:Buzzer BZ1
+U 1 1 5F10DF9C
+P 4700 3750
+F 0 "BZ1" V 4750 3750 50  0000 C CNN
+F 1 "Buzzer" V 4875 3750 50  0000 C CNN
+F 2 "modules:Buzzer_12x9.5RM7.6" V 4675 3850 50  0001 C CNN
+F 3 "~" V 4675 3850 50  0001 C CNN
+	1    4700 3750
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F117A45
+P 6300 3550
+F 0 "R1" V 6375 3600 50  0000 R CNN
+F 1 "47" V 6300 3550 50  0000 C CNN
+F 2 "modules:R_0603" V 6230 3550 50  0001 C CNN
+F 3 "~" H 6300 3550 50  0001 C CNN
+	1    6300 3550
+	0    1    -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP1
+U 1 1 5F1217BE
+P 6550 3650
+F 0 "TP1" V 6725 3800 50  0000 R CNN
+F 1 "Probe_PA3" V 6650 3800 50  0000 L CNN
+F 2 "modules:Pad_2.0x3.0mm" H 6750 3650 50  0001 C CNN
+F 3 "~" H 6750 3650 50  0001 C CNN
+	1    6550 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint_Probe TP2
+U 1 1 5F1221EF
+P 6550 3350
+F 0 "TP2" H 6700 3525 50  0000 R CNN
+F 1 "Probe_GND" H 6700 3450 50  0000 L CNN
+F 2 "modules:Pad_2.0x3.0mm" H 6750 3350 50  0001 C CNN
+F 3 "~" H 6750 3350 50  0001 C CNN
+	1    6550 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5F1305F4
+P 6550 3500
+F 0 "#PWR0102" H 6550 3250 50  0001 C CNN
+F 1 "GND" V 6555 3372 50  0000 R CNN
+F 2 "" H 6550 3500 50  0001 C CNN
+F 3 "" H 6550 3500 50  0001 C CNN
+	1    6550 3500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:VDD #PWR0104
+U 1 1 5F1310CA
+P 4450 3500
+F 0 "#PWR0104" H 4450 3350 50  0001 C CNN
+F 1 "VDD" V 4467 3628 50  0000 L CNN
+F 2 "" H 4450 3500 50  0001 C CNN
+F 3 "" H 4450 3500 50  0001 C CNN
+	1    4450 3500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6450 3550 6450 3500
+Wire Wire Line
+	6550 3350 6450 3350
+Connection ~ 6450 3350
+Wire Wire Line
+	6550 3500 6450 3500
+Connection ~ 6450 3500
+Wire Wire Line
+	6450 3500 6450 3350
+Wire Wire Line
+	4500 3650 4600 3650
+Wire Wire Line
+	4450 3500 4500 3500
+Connection ~ 4500 3500
+Wire Wire Line
+	4800 3650 4850 3650
+Wire Wire Line
+	5150 3350 4500 3350
+$Comp
+L Device:R R4
+U 1 1 638C5802
+P 6000 3450
+F 0 "R4" V 6100 3500 50  0000 R CNN
+F 1 "47k" V 6000 3450 50  0000 C CNN
+F 2 "modules:R_0603" V 5930 3450 50  0001 C CNN
+F 3 "~" H 6000 3450 50  0001 C CNN
+	1    6000 3450
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 638C5B45
+P 6000 3725
+F 0 "R5" V 5900 3775 50  0000 R CNN
+F 1 "47k" V 6000 3725 50  0000 C CNN
+F 2 "modules:R_0603" V 5930 3725 50  0001 C CNN
+F 3 "~" H 6000 3725 50  0001 C CNN
+	1    6000 3725
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	5850 3650 5850 3725
+Wire Wire Line
+	5850 3350 6450 3350
+Wire Wire Line
+	6150 3450 6150 3550
+Wire Wire Line
+	5850 3550 6150 3550
+Connection ~ 6150 3550
+Wire Wire Line
+	5850 3650 6550 3650
+Connection ~ 5850 3650
+$Comp
+L power:VDD #PWR0105
+U 1 1 638C888C
+P 6150 3725
+F 0 "#PWR0105" H 6150 3575 50  0001 C CNN
+F 1 "VDD" V 6167 3853 50  0000 L CNN
+F 2 "" H 6150 3725 50  0001 C CNN
+F 3 "" H 6150 3725 50  0001 C CNN
+	1    6150 3725
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C1
+U 1 1 638C6308
+P 5875 4250
+F 0 "C1" H 5967 4296 50  0000 L CNN
+F 1 "100n" H 5967 4205 50  0000 L CNN
+F 2 "modules:C_0603" H 5913 4100 50  0001 C CNN
+F 3 "~" H 5875 4250 50  0001 C CNN
+	1    5875 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 638C69D4
+P 5875 4350
+F 0 "#PWR0106" H 5875 4100 50  0001 C CNN
+F 1 "GND" H 5880 4177 50  0000 C CNN
+F 2 "" H 5875 4350 50  0001 C CNN
+F 3 "" H 5875 4350 50  0001 C CNN
+	1    5875 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR0107
+U 1 1 638C7021
+P 5875 4150
+F 0 "#PWR0107" H 5875 4000 50  0001 C CNN
+F 1 "VDD" H 5890 4323 50  0000 C CNN
+F 2 "" H 5875 4150 50  0001 C CNN
+F 3 "" H 5875 4150 50  0001 C CNN
+	1    5875 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 638F6A62
+P 5250 4300
+F 0 "BT1" H 5368 4396 50  0000 L CNN
+F 1 "3V_Cell" H 5368 4305 50  0000 L CNN
+F 2 "modules:BatteryHolder_12mm" V 5250 4360 50  0001 C CNN
+F 3 "~" V 5250 4360 50  0001 C CNN
+	1    5250 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 638F76AC
+P 5250 4400
+F 0 "#PWR0101" H 5250 4150 50  0001 C CNN
+F 1 "GND" H 5255 4227 50  0000 C CNN
+F 2 "" H 5250 4400 50  0001 C CNN
+F 3 "" H 5250 4400 50  0001 C CNN
+	1    5250 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR0103
+U 1 1 638F86D7
+P 5250 4100
+F 0 "#PWR0103" H 5250 3950 50  0001 C CNN
+F 1 "VDD" H 5265 4273 50  0000 C CNN
+F 2 "" H 5250 4100 50  0001 C CNN
+F 3 "" H 5250 4100 50  0001 C CNN
+	1    5250 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 3350 4500 3450
+Wire Wire Line
+	4500 3500 4500 3650
+Wire Wire Line
+	4550 3450 4500 3450
+Connection ~ 4500 3450
+Wire Wire Line
+	4500 3450 4500 3500
+Text Notes 5225 3075 0    50   ~ 0
+PFS154-S08 - Active or Passive (PWM) buzzer\nPFS173-S08 - Active or Passive (PWM) buzzer\n\nPMS150C-S08 - Active buzzer only\nPMS152-S08 - Active or Passive (PWM) buzzer\nPMS154C-S08 - Active or Passive (PWM) buzzer\nPMS171B-S08 - Active buzzer only
+Text Notes 5350 4525 0    50   ~ 0
+CR1220\nCR1225
+Wire Wire Line
+	5150 3550 5150 3650
+Connection ~ 5150 3650
+$EndSCHEMATC

@@ -11,58 +11,51 @@ This is a port of, and based on an original project for the ATtiny85(V) by David
 
 ### Links
 - [Firmware](firmware/)
-- [PCB - PMS150C-U06](pcb-pms150c-u06/)
+- [PCB](pcb-s08/)
+
+> ![Finished](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Finished.jpg?raw=true)
+> ![Top Side](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Top-Side.jpg?raw=true)
+> ![Bottom Side](https://github.com/serisman/pdk-continuity-tester/blob/master/img/Bottom-with-Battery.jpg?raw=true)
 
 ### Hardware Circuit
 
-##### Schematic for 8-pin PFS154, PFS173, PMS152, PMS154C
-(Also works for 10-pin, 14-pin, and 16-pin)
-> ![Schematic for PFS154-S08](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-pfs154-s08/output/Schematic.png?raw=true)
-
-##### Schematic for 6-pin PMS150C/PMS15A
-A PCB designed for the 6-pin PMS150C/PMS15A is available in the [pcb-pms150c-u06](pcb-pms150c-u06/) folder.
-> ![Schematic for PMS150C-U06](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-pms150c-u06/output/Schematic.png?raw=true)
+##### Schematic
+(for 8-pin PFS154, PFS173, PMS150C/PMS15A, PMS152, PMS154C, PMS171B)
+> ![Schematic](https://github.com/serisman/pdk-continuity-tester/blob/master/pcb-s08/output/Schematic.png?raw=true)
 
 **Probe/Reference**:
 
 One lead of the Probe is connected to one of the Comparator (-) pins, and the other lead is connected to GND. 
-- By default, the Probe lead is placed on the PA3 pin* (Port A, Bit 3).
-- For some devices (i.e. PMS150C/PMS15A), the Probe lead is placed on the PA6 pin* (Port A, Bit 6).
+- The Probe lead is placed on the PA3 pin (Port A, Bit 3).
 
-The Reference uses the Comparator (+) pin, with a ~50 ohm resistor to GND.
-- On all devices, the Reference is placed on the PA4 pin* (Port A, Bit 4). 
- 
->_*Note: Please consult the pinout for the specific microcontroller package used to identify the correct physical pin._
+The Reference uses the Comparator (+) pin, with a 47 ohm resistor to GND.
+- The Reference is placed on the PA4 pin (Port A, Bit 4). 
 
 **Buzzer**:
 
-For devices with an 11-bit PWM (specifically PWMG2) (i.e. PFS154/PFS173/PMS152/PMS154C), the Buzzer is placed on the PA5 pin* (Port A, Bit 5), which is also one of the PG2PWM pins.
+The Buzzer is placed on the PA5 pin (Port A, Bit 5).  It is also connected to the PA6 pin, but the current firmware doesn't use this (yet).
 
-For other devices (i.e. PMS150C/PMS15A), the 8-bit PWM output of timer 2 (TM2) is used, and the Buzzer is placed on the PA3 pin* (Port A, Bit 3), which is also the TM2PWM pin.
+For devices with an 11-bit PWM (i.e. PFS154, PFS173, PMS152, PMS154C), PA5 is also one of the PWM pins, enabling PWM control of the Buzzer's frequency using a Passive buzzer.
 
-In either case the Buzzer is installed with a current sink configuration.
+For other devices (i.e. PMS150C/PMS15A, PMS171B), the Buzzer can only be turned on/off and an Active buzzer is required.
 
-This means that one side of the Buzzer is connected to the digital pin of the IC, and the other is connected to VDD.
-- To enable the Buzzer, it is driven with an inverted 50% duty cycle at approx 2kHz.
-- To disable the Buzzer, it is driven with an inverted 0% duty cycle (i.e. HIGH, meaning no current will flow).
+In either case the Buzzer is used with a current sink configuration.
 
->_*Note: Please consult the pinout for the specific microcontroller package used to identify the correct physical pin._
+This means that one side of the Buzzer is connected to VDD, and the other is connected (through a current limiting resistor) to the digital pin of the IC.
+- To enable the Buzzer (Passive / PWM), it is driven with an inverted 50% duty cycle at approx 2kHz.
+- To enable the Buzzer (Active), it is driven LOW, meaning current will flow.
+- To disable the Buzzer, it is floated HIGH, meaning no current will flow.
 
 **LED**:
 
-By default, the LED is placed on the PA6 pin* (Port A, Bit 6) with a current sink configuration.
-
-For some devices (i.e. PMS150C/PMS15A), the LED is placed on the PA5 pin* (Port A, Bit 5) with a current sink configuration.
+The LED is placed on the PA7 pin (Port A, Bit 7) with a current sink configuration.
 
 This means the negative leg (or cathode) of the LED is connected to the digital pin of the IC, and the positive leg (or anode) of the LED is connected through a current limiting resistor to VDD.
 - When the digital pin is LOW, current will flow through the LED and it will light up.
 - When the digital pin is HIGH, no current will flow and the LED will turn off.
 
->_*Note: Please consult the pinout for the specific microcontroller package used to identify the correct physical pin._
-
-
 ### Compatibility
-This project is currently intended to be run (without modifications) on the PFS154, PFS173, PMS150C, PMS15A, PMS152, and PMS154C Padauk microcontrollers,
+This project is currently intended to be run (without modifications) on the PFS154, PFS173, PMS150C/PMS15A, PMS152, PMS154C, and PMS171B Padauk microcontrollers,
 but it should be able to be modified to run on just about every currently known Padauk microcontroller that is supported by SDCC and the Easy PDK Programmer.
 Some microcontrollers will require additional definitions in the [firmware/hal.h](firmware/hal.h) file,
 and less common devices may require additional device specific include files (firmware/pdk/device/*.h) to be supplied.

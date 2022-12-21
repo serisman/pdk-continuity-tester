@@ -28,11 +28,11 @@ Edit the variables at the top of the Makefile to:
 > Note: Both of these variables can be changed on the commandline as well.  i.e. `make DEVICE=PFS173 clean program` 
 
 ### Compatibility
-This project is currently intended to be run (without modifications) on the PFS154, PFS173, PMS150C, PMS15A, PMS152, and PMS154C Padauk microcontrollers,
+This project is currently intended to be run (without modifications) on the PFS154, PFS173, PMS150C/PMS15A, PMS152, PMS154C, and PMS171B Padauk microcontrollers,
 but it should be able to be modified to run on just about every currently known Padauk microcontroller that is supported by SDCC and the Easy PDK Programmer.
 Some microcontrollers will require additional definitions in the [hal.h](hal.h) file,
 and less common devices may require additional device specific include files (pdk/device/*.h) to be supplied.
 
 ### Build Stats
-- Code Size: ~90-100 words (depending on the microcontroller)
+- Code Size: ~90-109 words (depending on the microcontroller)
 - RAM usage: 2 bytes + stack
